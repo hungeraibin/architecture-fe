@@ -24,5 +24,8 @@ a bioilerplate for fe architecture
 
 # links 
 
+[extract-text-webpack-plugin]
+https://github.com/webpack-contrib/extract-text-webpack-plugin
+
 [html-webpack-plugin]
 https://github.com/jantimon/html-webpack-plugin
