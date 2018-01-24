@@ -1,9 +1,4 @@
-
-
-  .b {
-    color: yellow;
-  }
-
-  .c {
-    background: url('../img/vue.png');
-  }
+#root {
+  color: red;
+  background: url('../img/vue.png');
+}

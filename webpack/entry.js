@@ -1,4 +1,4 @@
 module.exports = {
-  sale: "./sale.js",  // 相对context路径
-  list: "./list.js"
+  sale: "./app/sale.js",  // 相对context路径
+  list: "./app/list.js"
 }
