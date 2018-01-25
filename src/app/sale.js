@@ -1,7 +1,7 @@
 import './sale.css'; 
 import React from 'react';
 import ReactDom from 'react-dom';
+import { SaleDetail } from '../components/sale/detail';
 
-let a = '1';
 const node = document.getElementById('root');
-ReactDom.render("hello world", node);
+ReactDom.render(<SaleDetail />, node);

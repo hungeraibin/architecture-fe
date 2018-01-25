@@ -6,12 +6,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   context: path.resolve(process.cwd(), "src"), // 手动配置context上下文
   entry: entry,
-  watch: true,
-  devServer: {
-    contentBase: path.join(process.cwd(), "sample"), // webpack之外的
-    compress: true,
-    port: 9000
-  },
   output: {
     publicPath: '/dist', // 路由路径 所有资源放在 /dist
     path: path.resolve(process.cwd(), "dist"), // process.cwd() node的启动目录
@@ -19,17 +13,21 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin("css/[name].css"), // 使用插件 样式放css目录
-    new HtmlWebpackPlugin({ // 生成html文件 
-      title: 'sale',
+    new HtmlWebpackPlugin({ // 引入资源生成html文件 
+      // title: 'sale',
       template: 'base/webpack.template.html',
-      chunks: ['sale', 'list'], // 中间资源 对应 js css 为 sale list
-      filename: 'sale.html'
+      inject: true
+      // chunks: ['sale'], // 中间资源 对应 js css 为 sale
+      // filename: 'sale.html'
     })
   ],
+  resolve: {
+    extensions: [".js", ".jsx", ".json"],
+  },
   module: {
     rules: [  // 编译规则
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         loader: 'babel-loader' 
       },
       {
